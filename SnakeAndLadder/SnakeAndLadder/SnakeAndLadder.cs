@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,6 +26,10 @@ namespace SnakeAndLadder
                         break;
                     case LADDER:
                         this.standingPositionofPlayer += dieRoll;
+                        if (this.standingPositionofPlayer > WINNING)
+                        {
+                            this.standingPositionofPlayer -= dieRoll;
+                        }
                         break;
                     case SNAKE:
                         this.standingPositionofPlayer -= dieRoll;
@@ -38,7 +41,7 @@ namespace SnakeAndLadder
                 }
                 //Console.WriteLine("The standin Position of Player is :" + this.standingPositionofPlayer + " " + "with a roll of " + dieRoll);
             }
-            Console.WriteLine("The Player wins the ame");
+            Console.WriteLine("The Player wins the Game");
         }
     }
 }
